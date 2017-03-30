@@ -90,7 +90,7 @@
 
 </div><br><br>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" style="position: fixed; bottom: 0px; width:100%;">
   <p>Footer Text</p>
 </footer>
 

@@ -40,7 +40,7 @@ class AdminController extends Controller
     	$role->users()->attach($user);
         $this->sendEmail($user, $activation->code);
 
-    	return redirect('/');
+    	return redirect('/register-user');
     }
 
     private function sendEmail($user, $code)

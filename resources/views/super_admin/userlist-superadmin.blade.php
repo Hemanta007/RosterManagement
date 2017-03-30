@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Duty Roster</title>
+  <title>User Lists</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
       margin-bottom: 0;
       border-radius: 0;
     }
+
     #navcolor
     {
       background-color: #515A5A;
@@ -35,15 +36,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/admin">Admin</a>
+      <a class="navbar-brand" href="#">Super Admin</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="/register-user">Register</a></li>
-        <li><a href="/userslist">Users</a></li>
+        <li><a href="/register-admin">Register</a></li>
+        <li><a href="/userlist-superadmin">Users</a></li>
         <li><a href="/roster">Roster</a></li>
         
-     </ul>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <form action="/logout" method="POST" id="logout-form">
                 {{ csrf_field() }}
@@ -56,6 +57,24 @@
 </nav>
 
 <br>
+<div class="container">
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Email</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
   

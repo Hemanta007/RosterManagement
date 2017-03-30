@@ -23,6 +23,10 @@ Route::get('/userslist', 'AdminController@usersList');
 
 Route::get('/roster', 'AdminController@roster');
 
+Route::get('/userlist-superadmin', 'Super_AdminController@usersList');
+
+
+
 Route::get('/register-admin', 'Super_AdminController@register')->middleware('super_admin');;
 Route::post('/register-admin', 'Super_AdminController@postRegister')->middleware('super_admin');;
 

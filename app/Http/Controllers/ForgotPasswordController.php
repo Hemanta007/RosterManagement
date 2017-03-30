@@ -19,14 +19,13 @@ class ForgotPasswordController extends Controller
     {
     	$user = User::whereEmail($request->email)->first();
 
-    	$sentinelUser = Sentinel::findById($user->id);
     	if(count($user) ==0)
     		return redirect()->back()->with([
     			'success'=> 'Reset code was sent to your email.'
     			]);
 
-    	$reminder = Reminder::exists($sentinelUser) ?: Reminder::
-    		create($sentinelUser);
+    	$reminder = Reminder::exists($user) ?: Reminder::
+    		create($user);
 
     	$this->sendEmail($user, $reminder->code);
 
@@ -43,9 +42,8 @@ class ForgotPasswordController extends Controller
 
         if(count($user) ==0)
             abort(404);
-        $sentinelUser = Sentinel::findById($user->id);
 
-        if ($reminder = Reminder::exists($sentinelUser)){
+        if ($reminder = Reminder::exists($user)){
            if($resetCode == $reminder->code)
                 return view('authentication.reset-password');
             else
@@ -67,11 +65,10 @@ class ForgotPasswordController extends Controller
 
             if(count($user) ==0)
                 abort(404);
-            $sentinelUser = Sentinel::findById($user->id);
 
-            if ($reminder = Reminder::exists($sentinelUser)){
+            if ($reminder = Reminder::exists($user)){
                if($resetCode == $reminder->code){
-                    Reminder::complete($sentinelUser, $resetCode, $request->password);
+                    Reminder::complete($user, $resetCode, $request->password);
 
                     return redirect('/login')->with('success','please login with your new password.');
                 }

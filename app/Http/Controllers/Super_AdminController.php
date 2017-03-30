@@ -17,8 +17,13 @@ class Super_AdminController extends Controller
 
     public function register()
     {
-    	return view('super_admin.super_admin');
+    	return view('super_admin.register-admin');
     }
+    public function usersList()
+    {
+        return view('super_admin.userlist-superadmin');
+    }
+
 
     public function postRegister(Request $request)
     {

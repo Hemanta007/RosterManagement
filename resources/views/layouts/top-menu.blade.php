@@ -15,9 +15,6 @@
           </ul>
         </nav>
         <h3 class="text-muted">
-        @if(Sentinel::check())
-          Hello,{{ Sentinel::getUser()->first_name}}
-       
-        @endif
+        
         </h3>
       </div>

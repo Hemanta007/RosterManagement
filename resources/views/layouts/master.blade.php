@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>
+  <body style="background-image: url(../img/background1.jpg); background-repeat: no-repeat; background-size: cover; position:relative;">
 
     <div class="container" ">
     @include ('layouts.top-menu') 

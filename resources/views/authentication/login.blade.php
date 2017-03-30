@@ -38,6 +38,13 @@
 							</div>
 						</div>
 
+						<div class="form-group">
+							<div class="input-group">
+							Remember me
+								<input type="checkbox" name="remember_me" >
+							</div>
+						</div>
+
 						<a href="/forgot-password">Forgot Your Password</a>
 						<div class="form-group">
 								<input type="submit" value="Login" class="btn btn-success pull-right">
